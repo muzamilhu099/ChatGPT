@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UI Colors Replica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="logo-row">
+          <div class="logo">🎨</div>
+          <div>
+            <h1>UI Colors</h1>
+            <p>Palette generator replica</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <label for="hex-input">Base color</label>
+          <div class="color-input-row">
+            <input id="hex-input" type="text" value="#7c3aed" maxlength="7" />
+            <input id="picker" type="color" value="#7c3aed" />
+          </div>
+          <div class="controls">
+            <button id="random-btn" class="button secondary">Random</button>
+            <button id="generate-btn" class="button">Generate</button>
+          </div>
+        </div>
+
+        <div class="card info">
+          <h2>How it works</h2>
+          <ul>
+            <li>Generate 10 shades from a base color.</li>
+            <li>Click any shade to copy its HEX value.</li>
+            <li>Use as Tailwind-like steps (50–900).</li>
+          </ul>
+        </div>
+      </aside>
+
+      <main class="palette-panel">
+        <header>
+          <h2 id="palette-title">Purple palette</h2>
+          <p>Click any swatch to copy the color.</p>
+        </header>
+        <section id="palette-grid" class="palette-grid" aria-live="polite"></section>
+      </main>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
